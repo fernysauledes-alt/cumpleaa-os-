@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños! - Un Día Especial</title>
+    <style>
+        /* --- CONFIGURACIÓN GENERAL --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #424242;
+            line-height: 1.6;
+        }
+
+        /* --- PORTADA ADAPTABLE SIN ZOOM EXCESIVO --- */
+        .seccion-hero {
+            position: relative;
+            width: 100%;
+            min-height: 380px; /* Altura ideal fija para que la foto no se estire de más */
+            height: 55vh; /* Proporción perfecta para pantallas de celular */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .foto-portada-fondo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%; /* Centra la imagen de forma inteligente para que luzca perfecta */
+            z-index: 1;
+        }
+
+        /* --- BLOQUE DE TEXTOS SOBRE LA PORTADA --- */
+        .contenedor-titulos {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ÚNICAMENTE el título principal flotará como un globo */
+        .titulo-globos {
+            font-family: 'Georgia', serif;
+            color: #ffffff;
+            font-size: clamp(2.2rem, 8vw, 3.5rem);
+            font-weight: bold;
+            line-height: 1.2;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 5px;
+            animation: flotarGlobo 4s ease-in-out infinite alternate;
+        }
+
+        .emoji-fiesta {
+            font-size: 2.3rem;
+            display: block;
+            margin: 5px auto;
+        }
+
+        /* El subtítulo ahora se queda estático y elegante abajo */
+        .subtitulo-inicial {
+            font-size: clamp(1rem, 4vw, 1.15rem);
+            color: #ffffff;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        @keyframes flotarGlobo {
+            0% { transform: translateY(0) rotate(-0.5deg); }
+            100% { transform: translateY(-18px) rotate(1deg); }
+        }
+
+        /* --- TARJETA BLANCA DE LA CARTA --- */
+        .contenedor-principal {
+            max-width: 600px;
+            margin: -40px auto 40px auto;
+            position: relative;
+            z-index: 3;
+            background: #ffffff;
+            padding: 35px 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .carta-seccion {
+            margin-bottom: 30px;
+        }
+
+        .carta-seccion h2 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #0d47a1;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .texto-carta {
+            font-size: 1.05rem;
+            text-align: justify;
+            color: #333333;
+            white-space: pre-line;
+        }
+
+        /* --- SECCIÓN MULTIMEDIA OPTIMIZADA --- */
+        .bloque-recuerdo {
+            background: #fff0f5;
+            border-left: 5px solid #d81b60;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .bloque-recuerdo h3 {
+            color: #d81b60;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif;
+        }
+
+        .media-archivo {
+            width: 100%;
+            max-width: 100%;
+            display: block;
+            margin: 15px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            object-fit: cover;
+        }
+
+        @media (max-width: 600px) {
+            .seccion-hero { min-height: 350px; height: 50vh; }
+            .contenedor-principal { margin: -25px 15px 30px 15px; padding: 25px 20px; }
+            .texto-carta { text-align: left; }
+        }
+        /* --- ACTIVACIÓN DE LA CASCADA DE CONFETI --- */
+.seccion-hero {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.capa-confeti {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+    background-image: 
+        radial-gradient(circle at 15% 20%, #ffeb3b 6px, transparent 6px),
+        radial-gradient(circle at 80% 15%, #ff4081 7px, transparent 7px),
+        radial-gradient(circle at 10% 65%, #00e676 5px, transparent 5px),
+        radial-gradient(circle at 85% 75%, #29b6f6 6px, transparent 6px),
+        radial-gradient(circle at 50% 35%, #ff9100 5px, transparent 5px),
+        radial-gradient(circle at 30% 80%, #e040fb 7px, transparent 7px),
+        radial-gradient(circle at 70% 55%, #00e676 6px, transparent 6px),
+        radial-gradient(circle at 40% 10%, #ffeb3b 5px, transparent 5px) !important;
+    background-size: 400px 400px !important;
+    opacity: 0.95 !important;
+    animation: lluviaDePapelitos 6s linear infinite !important;
+}
+
+@keyframes lluviaDePapelitos {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 400px; }
+}
+
+.contenedor-titulos, .titulo-globos, .subtitulo-inicial, .emoji-fiesta {
+    position: relative !important;
+    z-index: 3 !important;
+}
+
+    </style>
+    
+</head>
+<body>
+
+    <!-- PORTADA DE FONDO COMPLETA -->
+   <div class="seccion-hero">
+    
+    <!-- PEGA ÚNICAMENTE ESTA LÍNEA AQUÍ ABAJO -->
+    <div class="capa-confeti"></div>
+
+    <img class="foto-portada-fondo" src="portada.jpeg" alt="Foto de portada especial">
+    
+    <div class="contenedor-titulos">
+        <h1 class="titulo-globos">¡Feliz<br>Cumpleaños!</h1>
+        <span class="emoji-fiesta">🥳🎉</span>
+        <p class="subtitulo-inicial">Un espacio especial solo para ti</p>
+    </div>
+</div>
+
+
+    <!-- TARJETA CONTENEDORA BLANCA -->
+    <main class="contenedor-principal">
+        
+        <!-- SECCIÓN 1: CARTA PRINCIPAL -->
+        <section class="carta-seccion">
+            <h2>Querida Anita💖</h2>
+            <p class="texto-carta">Sé que tal vez esta no sea la manera más común ni la más efectiva de decir las cosas en estos tiempos, pero si de algo tengo la total certeza in el corazón, es de que vale completamente la pena hacer una pausa y escribirte esto. Antes de continuar y adentrarme en lo que realmente quiero expresarte, me gustaría aclarar un par de puntos muy importantes. Lo primero es que no quiero, bajo ninguna circunstancia, que llegues a tomar esto como un malentendido o que te cause la más mínima molestia o incomodidad; mi intención está muy lejos de eso. Lo segundo es que todo lo que leerás a continuación nace con el único y sincero propósito de hacerte saber que, a pesar de la distancia, del tiempo y de todas las circunstancias que nos rodean, siempre serás una persona sumamente especial y significativa en mi vida. Una vez aclarado esto, me permito continuar. Por medio de estas líneas, quiero desearte un muy feliz, hermoso y bendecido cumpleaños. Cumplir un añito más de vida siempre nos pone a reflexionar; a veces podemos ver el paso del tiempo como algo nostálgico o abrumador, pero créeme que cada año, cada momento y cada día compartido con las personas que te aman vale completamente la pena. Este año que dejas atrás ha sido parte de tu aprendizaje, y este nuevo que comienzas hoy es una página en blanco llena de oportunidades. No te voy a mentir: hoy, en tu día, me encantaría poder estar a tu lado. Me fascinaría la idea de sorprenderte, llevarte un ramo de flores enorme, de esos que apenas se pueden cargar, y por qué no, unos buenos mariachis que te canten las mañanitas, acompañados de regalos que te hicieran sonreír. Sé que eso es lo que te mereces, pero también soy consciente de la realidad y sé perfectamente que en este momento no sería lo adecuado ni lo correcto. He aprendido a respetar nuestros espacios, y por eso elijo enviarte este abrazo en forma de letras. Me habría encantado acompañarte físicamente en esta nueva vuelta al sol, poder tomar tu mano con fuerza, mirarte a los ojos y darte ese abrazo contenedor que las palabras a veces no alcanzan a dimensionar. Quería decirte todo esto en persona, pero hoy te entrego mi cariño sincero a través de cada uno de los caracteres que llevo escritos. Tengo la absoluta convicción de que en esta nueva etapa que hoy inauguras van a venir cosas muchísimo mejores. Este nuevo comienzo será más brillante, más maduro y más pleno de lo que fue el ayer. Si algo me queda claro, es que te has convertido en una mujer increíblemente capaz de todo lo que se propone. Esa fuerza interior, esa determinación para salir adelante y esa chispa única son, sin duda, las cualidades que siempre me han gustado, cautivado y admirado de ti. Este nuevo año te sonríe de la mejor manera posible y te abre los brazos. No hay nada mejor en esta vida que aprender a disfrutar el presente, aprovechar cada instante, cada amanecer y cada oportunidad que se te presente, porque tú, Ana, te mereces solo lo más bonito que el mundo pueda ofrecer. Soy muy maduro al admitir y reconocer que yo no pude darte todo lo que te merecías en su momento, pero créeme que me llena de paz saber que este año será distinto y mejor para ti. Lo sé porque eres una mujer fuerte, decidida y, en el buen sentido de la palabra, muy "cabrona"; de esas mujeres que no se rinden ante nada, que tienen un corazón gigante y muchísimo amor, alegría y éxito que dar a quienes te rodean. Eres eso, Anita, y una infinidad de cosas hermosas más que a veces ni tú misma te alcanzas a creer. Así que hoy, en el día de tu cumpleaños, te deseo el mayor de los éxitos, una salud inquebrantable y una felicidad que te desborde. Deseo de todo corazón que esta nueva oportunidad y este nuevo comienzo te abracen con fuerza, te cuiden y te entreguen solo cosas buenas. Que nunca te falten motivos para sonreír y que la vida te devuelva multiplicada toda la luz que le das al mundo. Con todo mi respeto y cariño de siempre, feliz cumpleaños, Anita.</p>
+        </section>
+        <!-- SECCIÓN 2: MUCHAS FELICIDADES & MULTIMEDIA COMPLETA -->
+        <section class="carta-seccion">
+            <h2 style="color: #d81b60;">Muchas Felicidades🎁</h2>
+            
+            <!-- EL VIDEO Y EL TEXTO COMPARTEN EL MISMO BLOQUE ROSA -->
+            <article class="bloque-recuerdo">
+                <h3>Dale play ✨</h3>
+                <video class="media-archivo" controls>
+                    <source src="mi_video.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+                <p>Solo tu eres quien hace que los breves momentos sean inolvidables.</p>
+            </article>
+
+            <article class="bloque-recuerdo">
+                <h3>Simplemente lo mas especial 📸</h3>
+                <img class="media-archivo" src="imagen2.jpeg" alt="Recuerdo especial 2">
+                <p>Tu día llega lleno de alegría, como un regalo que la vida trae, el tiempo se detiene en este día y una hermosa luz sobre ti cae. Que el mundo te regale sus colores, que el cielo brille siempre en tu ventana, y el año que comienzas traiga flores para cuidar tu vida cada mañana. Celebro que existas con respeto, con un cariño limpio y verdadero; te guardo en mi recuerdo muy secreto y siempre verte bien es lo que quiero</p>
+            </article>
+
+            <article class="bloque-recuerdo">
+                <h3>Desde pequeña lo mas especial</h3>
+                <img class="media-archivo" src="imagen3.jpeg" alt="Recuerdo especial 3">
+                <p>Creciste con la gracia de una rosa, dejando atrás la niña del ayer, y hoy el tiempo te vuelve tan hermosa, siendo la gran mujer que admiro ver. Me llena de un orgullo silencioso mirar la luz que de tu alma nace; ver tu camino alegre y generoso, y el bien que tu presencia siempre hace. Que el cielo te regale un año tierno, repleto de momentos de alegría; te cuido en la distancia de este invierno, deseando lo mejor para tu día.</p>
+            </article>
+
+            <article class="bloque-recuerdo">
+                <h3>Días de Alegría 🌟</h3>
+                <img class="media-archivo" src="imagen4.jpeg" alt="Recuerdo especial 4">
+                <p>Los días de alegría son un arte que llenan de color el corazón, y hoy el cielo se viste para amarte cantando una preciosa melodía. Qué bello es ver el tiempo en tu sonrisa, mirar la luz que de tus ojos nace, sentir cómo la vida va de prisa y el bien que tu presencia siempre hace. Que este nuevo año sea un camino repleto de momentos de ilusión, que encuentres la alegría en tu destino y guardes paz en cada decisión.</p>
+            </article>
+
+            <article class="bloque-recuerdo">
+                <h3>Te admiro siempre🚀</h3>
+                <img class="media-archivo" src="imagen5.jpeg" alt="Recuerdo especial 5">
+                <p>Admiro la grandeza de tu vida, la luz que de tu alma siempre emana; tu forma de avanzar tan decidida, trayendo un sol hermoso a la mañana. Es tierno este cariño que te guardo, profundo y tan sincero en su nobleza; no busca más respuesta que cuidarte y ver cómo progresa tu belleza. Deseo que el destino te bendiga, que cubra tu camino de alegría; te cuido en la distancia como amiga, deseando lo mejor para tu día.</p>
+            </article>
+
+            <article class="bloque-recuerdo">
+                <h3>Boleto 1🤗</h3>
+                <img class="media-archivo" src="imagen6.jpeg" alt="Recuerdo especial 6">
+                <p>Te mereces vivir experiencias que te llenen el alma. Espero que este día se quede grabado en tu memoria para siempre como uno de los más felices.</p>
+            </article>
+
+            <article class="bloque-recuerdo">
+                <h3>Boleto 2🎈</h3>
+                <img class="media-archivo" src="imagen7.jpeg" alt="Recuerdo especial 7">
+                <p>Guarda muy bien esta fecha en tu calendario, porque ese día vas a perder la voz de tanta emoción.</p>
+            </article>
+        </section>
+
+    </main>
+</body>
+</html>
